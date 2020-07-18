@@ -14,11 +14,11 @@ public class SfgIdApplication {
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(SfgIdApplication.class, args);
 
+
+		System.out.println("-------- Primary");
 		MyController myController = (MyController) ctx.getBean("myController");
+		System.out.println(myController.sayHello());
 
-		String greetings = myController.sayHello();
-
-		System.out.println(greetings);
 
 		System.out.println("-------- Property");
 		PropertyInjectedController propertyInjectedController = (PropertyInjectedController) ctx.getBean("propertyInjectedController");
