@@ -1,9 +1,6 @@
 package guru.sf.sfgid;
 
-import guru.sf.sfgid.controllers.ConstructorInjectedController;
-import guru.sf.sfgid.controllers.MyController;
-import guru.sf.sfgid.controllers.PropertyInjectedController;
-import guru.sf.sfgid.controllers.SetterInjectedController;
+import guru.sf.sfgid.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -14,6 +11,9 @@ public class SfgIdApplication {
     public static void main(String[] args) {
         ApplicationContext ctx = SpringApplication.run(SfgIdApplication.class, args);
 
+        System.out.println("------- Profile/I18N");
+        I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+        System.out.println(i18nController.sayHello());
 
         System.out.println("-------- Primary/Default");
         MyController myController = (MyController) ctx.getBean("myController");
