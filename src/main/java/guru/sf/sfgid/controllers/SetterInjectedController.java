@@ -17,6 +17,6 @@ public class SetterInjectedController {
     }
 
     public String getGreetings() {
-        return this.greetingService.sayHello();
+        return this.greetingService.sayGreeting();
     }
 }

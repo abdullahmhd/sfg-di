@@ -3,9 +3,10 @@ package guru.sf.sfgid.services;
 import org.springframework.stereotype.Service;
 
 @Service
-public class SetterInjectedGreetingService implements GreetingService{
+public class SetterInjectedGreetingService implements GreetingService {
+
     @Override
-    public String sayHello() {
+    public String sayGreeting() {
         return "Hello World! - Setter";
     }
 }
