@@ -1,6 +1,8 @@
 package guru.sf.sfgid;
 
 import guru.sf.sfgid.controllers.*;
+import guru.sf.sfgid.services.CustomJmsProps;
+import guru.sf.sfgid.services.CustomProps;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -10,6 +12,16 @@ public class SfgIdApplication {
 
     public static void main(String[] args) {
         ApplicationContext ctx = SpringApplication.run(SfgIdApplication.class, args);
+
+        CustomProps customProps = ctx.getBean(CustomProps.class);
+        System.out.println("------CustomProps--------");
+        System.out.println("guru.test.user: "+customProps.getUser());
+        System.out.println("guru.test.url: "+customProps.getUrl());
+
+        CustomJmsProps customJmsProps = ctx.getBean(CustomJmsProps.class);
+        System.out.println("------CustomJmsProps--------");
+        System.out.println("guru.jms.jmsUser: "+customJmsProps.getJmsUser());
+        System.out.println("guru.jms.jmsUrl: "+customJmsProps.getJmsUrl());
 
         PetController petController = ctx.getBean("petController", PetController.class);
         System.out.println("--- The Best Pet is ---");
