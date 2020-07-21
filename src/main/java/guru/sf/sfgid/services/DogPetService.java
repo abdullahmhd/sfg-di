@@ -3,7 +3,7 @@ package guru.sf.sfgid.services;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-@Profile({"dog", "default"})
+@Profile({"dog", "default", "ES"})
 @Service
 public class DogPetService implements  PetService {
     public String getPetType(){
