@@ -1,0 +1,10 @@
+spring:
+  h2:
+    console:
+      enabled: true
+guru:
+  test:
+    user: Abdullah
+    pwd: alkasdf
+    url: "https://github.com/abdullahmhd/sfg-pet-clinic.git" #test
+

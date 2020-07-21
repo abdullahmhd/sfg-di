@@ -12,19 +12,9 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 @Configuration
 //@PropertySource({"classpath:custom.properties", "classpath:jms-props.properties"})
 @PropertySources({
-        @PropertySource("classpath:custom.properties"),
         @PropertySource("classpath:jms-props.properties")
 })
 public class PropertyConfig {
-
-    @Value("${guru.test.user}")
-    private String user;
-
-    @Value("${guru.test.pwd}")
-    private String pwd;
-
-    @Value("${guru.test.url}")
-    private String url;
 
     @Value("${guru.jms.jmsUser}")
     private String jmsUser;
@@ -34,15 +24,6 @@ public class PropertyConfig {
 
     @Value("${guru.jms.jmsUrl}")
     private String jmsUrl;
-
-    @Bean
-    public CustomProps getCustProps() {
-        CustomProps props = new CustomProps();
-        props.setUser(this.user);
-        props.setPwd(this.pwd);
-        props.setUrl(this.url);
-        return props;
-    }
 
     @Bean
     public CustomJmsProps getCustomJmsProps() {
